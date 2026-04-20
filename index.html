@@ -1,0 +1,1854 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Hey Contact Heroes – Ihr Call Center Partner in Hamburg. Inbound, Outbound, Back Office und KI-Lösungen für Ihr Unternehmen. Jetzt Kontakt aufnehmen!">
+<meta name="keywords" content="Call Center Hamburg, Inbound, Outbound, Back Office, KI, Kundenservice, hey contact heroes">
+<title>Hey Contact Heroes – Call Center Hamburg | Inbound · Outbound · KI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #00A3A3;
+    --teal-dark: #007878;
+    --teal-light: #E0F7F7;
+    --orange: #F5A623;
+    --orange-dark: #C4830E;
+    --orange-light: #FEF3DC;
+    --purple: #9B2AA0;
+    --purple-dark: #6D1B72;
+    --purple-light: #F5E6F6;
+    --dark: #0F1923;
+    --dark-2: #1A2533;
+    --mid: #3A4A5C;
+    --muted: #6B7A8D;
+    --light: #F4F7FA;
+    --white: #FFFFFF;
+    --border: rgba(0,0,0,0.08);
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --radius: 12px;
+    --radius-lg: 20px;
+    --shadow: 0 4px 24px rgba(0,0,0,0.07);
+    --shadow-lg: 0 12px 48px rgba(0,0,0,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--dark);
+    background: var(--white);
+    line-height: 1.65;
+    font-size: 16px;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+  }
+  .nav-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    height: 68px;
+    gap: 32px;
+  }
+  .nav-logo img { height: 42px; display: block; }
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 4px;
+    margin-left: auto;
+    flex-wrap: wrap;
+  }
+  .nav-links a {
+    font-family: var(--font-body);
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--mid);
+    text-decoration: none;
+    padding: 6px 11px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .nav-links a:hover { color: var(--teal); background: var(--teal-light); }
+  .nav-cta {
+    background: var(--teal) !important;
+    color: white !important;
+    border-radius: 8px !important;
+    padding: 8px 18px !important;
+    font-weight: 600 !important;
+  }
+  .nav-cta:hover { background: var(--teal-dark) !important; }
+  .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+  .hamburger span { width: 24px; height: 2px; background: var(--dark); border-radius: 2px; transition: 0.3s; }
+  .mobile-menu { display: none; position: fixed; top: 68px; left: 0; right: 0; bottom: 0; background: white; z-index: 999; padding: 24px 32px; overflow-y: auto; }
+  .mobile-menu.open { display: block; }
+  .mobile-menu a { display: block; font-size: 18px; font-weight: 600; color: var(--dark); text-decoration: none; padding: 14px 0; border-bottom: 1px solid var(--border); }
+  .mobile-menu a:last-child { border-bottom: none; color: var(--teal); }
+
+  /* HERO */
+  .hero {
+    padding: 140px 40px 100px;
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(0,163,163,0.18) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -150px; left: 30%;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(155,42,160,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,163,163,0.15);
+    border: 1px solid rgba(0,163,163,0.3);
+    color: var(--teal);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  .hero-badge::before { content: ''; width: 7px; height: 7px; background: var(--teal); border-radius: 50%; }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 5vw, 68px);
+    font-weight: 800;
+    line-height: 1.05;
+    color: white;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+  }
+  .hero h1 .accent-teal { color: var(--teal); }
+  .hero h1 .accent-orange { color: var(--orange); }
+  .hero h1 .accent-purple { color: #C45FC8; }
+  .hero-sub {
+    font-size: 18px;
+    color: rgba(255,255,255,0.65);
+    max-width: 480px;
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--teal);
+    color: white;
+    padding: 15px 32px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body);
+  }
+  .btn-primary:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,163,163,0.35); }
+  .btn-secondary {
+    background: rgba(255,255,255,0.08);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 15px 32px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body);
+  }
+  .btn-secondary:hover { background: rgba(255,255,255,0.14); transform: translateY(-2px); }
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 48px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .hero-stat {
+    background: rgba(255,255,255,0.05);
+    padding: 24px 20px;
+    text-align: center;
+  }
+  .hero-stat-num {
+    font-family: var(--font-display);
+    font-size: 34px;
+    font-weight: 800;
+    color: var(--orange);
+    display: block;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .hero-stat-label { font-size: 12px; color: rgba(255,255,255,0.55); font-weight: 500; letter-spacing: 0.02em; }
+  .hero-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .hero-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  .hero-card:hover { transform: translateY(-4px); }
+  .hero-card-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+  .hero-card-title { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: white; margin-bottom: 8px; }
+  .hero-card-text { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.6; }
+  .hero-card-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .online-dot { display: inline-block; width: 8px; height: 8px; background: #22D45B; border-radius: 50%; margin-right: 6px; animation: pulse-dot 2s infinite; }
+  @keyframes pulse-dot { 0%,100%{opacity:1}50%{opacity:0.4} }
+  .hero-live-badge {
+    display: inline-flex; align-items: center;
+    background: rgba(34,212,91,0.12);
+    border: 1px solid rgba(34,212,91,0.25);
+    color: #22D45B;
+    font-size: 12px; font-weight: 600;
+    padding: 4px 12px; border-radius: 100px;
+    margin-bottom: 12px;
+    letter-spacing: 0.03em;
+  }
+
+  /* SECTIONS COMMON */
+  section { padding: 96px 40px; }
+  .section-inner { max-width: 1280px; margin: 0 auto; }
+  .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 3.5vw, 48px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--dark);
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+  }
+  .section-sub {
+    font-size: 17px;
+    color: var(--muted);
+    max-width: 580px;
+    line-height: 1.7;
+  }
+  .section-header { margin-bottom: 60px; }
+  .section-header.centered { text-align: center; }
+  .section-header.centered .section-sub { margin: 0 auto; }
+
+  /* TRUST BAR */
+  .trust-bar {
+    padding: 32px 40px;
+    background: var(--light);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .trust-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .trust-label { font-size: 13px; font-weight: 600; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+  .trust-logos { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; justify-content: center; }
+  .trust-logo-item {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--muted);
+    opacity: 0.6;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+
+  /* LEISTUNGEN */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .service-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 36px 32px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--teal);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: transparent; }
+  .service-card:hover::after { transform: scaleX(1); }
+  .service-card.orange::after { background: var(--orange); }
+  .service-card.purple::after { background: var(--purple); }
+  .service-icon {
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px;
+    margin-bottom: 24px;
+  }
+  .service-icon.teal { background: var(--teal-light); }
+  .service-icon.orange { background: var(--orange-light); }
+  .service-icon.purple { background: var(--purple-light); }
+  .service-card h3 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--dark);
+  }
+  .service-card p { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; }
+  .service-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 100px;
+    background: var(--light);
+    color: var(--mid);
+  }
+  .tag.teal { background: var(--teal-light); color: var(--teal-dark); }
+  .tag.orange { background: var(--orange-light); color: var(--orange-dark); }
+  .tag.purple { background: var(--purple-light); color: var(--purple-dark); }
+
+  /* WHY HCH – dark section */
+  .why-section { background: var(--dark); }
+  .why-section .section-label { color: var(--orange); }
+  .why-section .section-title { color: white; }
+  .why-section .section-sub { color: rgba(255,255,255,0.6); }
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .why-items { display: flex; flex-direction: column; gap: 32px; }
+  .why-item { display: flex; gap: 20px; }
+  .why-num {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--teal);
+    min-width: 36px;
+    padding-top: 2px;
+    letter-spacing: 0.05em;
+  }
+  .why-content h4 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 8px;
+  }
+  .why-content p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+  .why-visual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .why-kpi {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    text-align: center;
+  }
+  .why-kpi-val {
+    font-family: var(--font-display);
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .why-kpi-label { font-size: 13px; color: rgba(255,255,255,0.5); font-weight: 500; }
+  .kpi-teal { color: var(--teal); }
+  .kpi-orange { color: var(--orange); }
+  .kpi-purple { color: #C45FC8; }
+  .kpi-green { color: #22D45B; }
+  .why-kpi.span2 { grid-column: span 2; }
+
+  /* BRANCHEN */
+  .industry-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .industry-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all 0.3s;
+    background: white;
+    cursor: pointer;
+  }
+  .industry-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+  .industry-thumb {
+    height: 140px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .industry-body { padding: 20px; }
+  .industry-body h4 {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--dark);
+  }
+  .industry-body p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  /* REFERENZEN */
+  .ref-section { background: var(--light); }
+  .ref-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .ref-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 36px 32px;
+    border: 1px solid var(--border);
+    position: relative;
+  }
+  .ref-quote {
+    font-size: 48px;
+    line-height: 1;
+    color: var(--teal);
+    font-family: Georgia, serif;
+    margin-bottom: 16px;
+  }
+  .ref-text {
+    font-size: 16px;
+    color: var(--mid);
+    line-height: 1.75;
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+  .ref-author { display: flex; align-items: center; gap: 14px; }
+  .ref-avatar {
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+  }
+  .ref-name { font-weight: 600; font-size: 15px; color: var(--dark); }
+  .ref-role { font-size: 13px; color: var(--muted); }
+  .ref-rating { display: flex; gap: 3px; margin-top: 4px; }
+  .star { color: var(--orange); font-size: 13px; }
+
+  /* TECHNOLOGIE & KI */
+  .tech-section { background: var(--dark); }
+  .tech-section .section-label { color: var(--purple); }
+  .tech-section .section-title { color: white; }
+  .tech-section .section-sub { color: rgba(255,255,255,0.6); }
+  .tech-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .tech-features { display: flex; flex-direction: column; gap: 4px; }
+  .tech-feature {
+    display: flex; gap: 16px; align-items: flex-start;
+    padding: 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .tech-feature:hover, .tech-feature.active { background: rgba(255,255,255,0.06); }
+  .tech-feature-icon {
+    width: 42px; height: 42px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .tech-feature-icon.purple { background: rgba(155,42,160,0.25); }
+  .tech-feature-icon.teal { background: rgba(0,163,163,0.2); }
+  .tech-feature-icon.orange { background: rgba(245,166,35,0.2); }
+  .tech-feature h5 { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: white; margin-bottom: 6px; }
+  .tech-feature p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.65; }
+  .tech-visual-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+  }
+  .tech-platform-title {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .tech-platforms {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+  .tech-platform-item {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 16px 12px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    transition: all 0.2s;
+  }
+  .tech-platform-item:hover { background: rgba(0,163,163,0.15); border-color: rgba(0,163,163,0.3); color: var(--teal); }
+  .tech-platform-item span { display: block; font-size: 22px; margin-bottom: 6px; }
+  .tech-metric-row { display: flex; gap: 12px; margin-top: 24px; }
+  .tech-metric {
+    flex: 1;
+    background: rgba(0,163,163,0.12);
+    border: 1px solid rgba(0,163,163,0.2);
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+  }
+  .tech-metric-val { font-family: var(--font-display); font-size: 24px; font-weight: 800; color: var(--teal); display: block; }
+  .tech-metric-lbl { font-size: 11px; color: rgba(255,255,255,0.4); font-weight: 500; }
+
+  /* KARRIERE */
+  .career-section { background: var(--light); }
+  .career-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .job-list { display: flex; flex-direction: column; gap: 16px; }
+  .job-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    display: flex; align-items: center; gap: 20px;
+    transition: all 0.25s;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .job-card:hover { transform: translateX(8px); border-color: var(--teal); box-shadow: var(--shadow); }
+  .job-icon { font-size: 28px; }
+  .job-info h5 { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+  .job-info p { font-size: 13px; color: var(--muted); }
+  .job-badges { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+  .job-badge { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 100px; }
+  .badge-remote { background: var(--teal-light); color: var(--teal-dark); }
+  .badge-full { background: var(--orange-light); color: var(--orange-dark); }
+  .badge-part { background: var(--purple-light); color: var(--purple-dark); }
+  .career-perks { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .perk-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    text-align: center;
+  }
+  .perk-card .perk-icon { font-size: 30px; margin-bottom: 12px; }
+  .perk-card h6 { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+  .perk-card p { font-size: 13px; color: var(--muted); }
+
+  /* INSIGHTS */
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .blog-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: white;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .blog-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+  .blog-thumb {
+    height: 190px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 56px;
+  }
+  .blog-body { padding: 28px; }
+  .blog-cat {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 10px;
+  }
+  .blog-body h4 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .blog-body p { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; }
+  .blog-meta { display: flex; align-items: center; gap: 12px; font-size: 12px; color: var(--muted); }
+  .blog-date { font-weight: 500; }
+  .blog-dot { opacity: 0.4; }
+
+  /* KONTAKT */
+  .contact-section { background: var(--dark); }
+  .contact-section .section-label { color: var(--orange); }
+  .contact-section .section-title { color: white; }
+  .contact-section .section-sub { color: rgba(255,255,255,0.6); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .contact-info { color: white; }
+  .contact-info-items { display: flex; flex-direction: column; gap: 28px; margin-top: 40px; }
+  .contact-info-item { display: flex; gap: 16px; align-items: flex-start; }
+  .contact-info-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .contact-info-icon.teal { background: rgba(0,163,163,0.2); }
+  .contact-info-icon.orange { background: rgba(245,166,35,0.2); }
+  .contact-info-icon.purple { background: rgba(155,42,160,0.2); }
+  .contact-info-label { font-size: 12px; color: rgba(255,255,255,0.4); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+  .contact-info-val { font-size: 16px; color: white; font-weight: 500; }
+  .contact-form-wrap {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { margin-bottom: 18px; }
+  .form-label { display: block; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.7); margin-bottom: 8px; letter-spacing: 0.02em; }
+  .form-input {
+    width: 100%;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 13px 16px;
+    font-size: 15px;
+    color: white;
+    font-family: var(--font-body);
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  .form-input::placeholder { color: rgba(255,255,255,0.3); }
+  .form-input:focus { border-color: var(--teal); }
+  .form-select {
+    width: 100%;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 13px 16px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+    font-family: var(--font-body);
+    transition: border-color 0.2s;
+    outline: none;
+    cursor: pointer;
+  }
+  .form-select:focus { border-color: var(--teal); }
+  .form-select option { background: var(--dark-2); color: white; }
+  textarea.form-input { resize: vertical; min-height: 120px; }
+  .form-consent { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 24px; }
+  .form-consent input { margin-top: 3px; flex-shrink: 0; accent-color: var(--teal); width: 16px; height: 16px; }
+  .form-consent label { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+  .form-consent a { color: var(--teal); text-decoration: none; }
+  .btn-form {
+    width: 100%;
+    background: var(--teal);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: all 0.25s;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+  }
+  .btn-form:hover { background: var(--teal-dark); transform: translateY(-2px); }
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 60px 40px;
+    color: white;
+  }
+  .form-success .success-icon { font-size: 64px; margin-bottom: 24px; }
+  .form-success h3 { font-family: var(--font-display); font-size: 24px; font-weight: 800; margin-bottom: 12px; }
+  .form-success p { color: rgba(255,255,255,0.6); }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding: 64px 40px 32px;
+  }
+  .footer-inner { max-width: 1280px; margin: 0 auto; }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .footer-logo { margin-bottom: 16px; }
+  .footer-logo img { height: 38px; }
+  .footer-brand-text { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.7; margin-bottom: 24px; }
+  .footer-socials { display: flex; gap: 10px; }
+  .social-btn {
+    width: 36px; height: 36px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    color: rgba(255,255,255,0.6);
+  }
+  .social-btn:hover { background: var(--teal); border-color: var(--teal); color: white; }
+  .footer-col h6 {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col a { font-size: 14px; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--teal); }
+  .footer-bottom {
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+  }
+  .footer-copy { font-size: 13px; color: rgba(255,255,255,0.3); }
+  .footer-legal { display: flex; gap: 24px; }
+  .footer-legal a { font-size: 13px; color: rgba(255,255,255,0.3); text-decoration: none; }
+  .footer-legal a:hover { color: rgba(255,255,255,0.6); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeUp 0.65s ease forwards; }
+  .fade-up-d1 { animation-delay: 0.1s; opacity: 0; animation-fill-mode: forwards; }
+  .fade-up-d2 { animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards; }
+  .fade-up-d3 { animation-delay: 0.3s; opacity: 0; animation-fill-mode: forwards; }
+  .fade-up-d4 { animation-delay: 0.4s; opacity: 0; animation-fill-mode: forwards; }
+
+  /* CTA STRIP */
+  .cta-strip {
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+    padding: 72px 40px;
+    text-align: center;
+  }
+  .cta-strip h2 {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3.5vw, 48px);
+    font-weight: 800;
+    color: white;
+    margin-bottom: 16px;
+    line-height: 1.1;
+  }
+  .cta-strip p { font-size: 17px; color: rgba(255,255,255,0.75); margin-bottom: 36px; }
+  .cta-strip-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-white {
+    background: white;
+    color: var(--teal-dark);
+    padding: 15px 36px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s;
+    font-family: var(--font-body);
+  }
+  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+  .btn-outline-white {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255,255,255,0.5);
+    padding: 14px 36px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s;
+    font-family: var(--font-body);
+  }
+  .btn-outline-white:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .industry-grid { grid-template-columns: repeat(2, 1fr); }
+    .ref-grid { grid-template-columns: repeat(2, 1fr); }
+    .blog-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .hero-inner { gap: 48px; }
+    .tech-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    section { padding: 72px 20px; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; margin-left: auto; }
+    .hero { padding: 100px 20px 72px; min-height: auto; }
+    .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+    .hero-visual { display: none; }
+    .hero-stats { grid-template-columns: repeat(3, 1fr); }
+    .services-grid { grid-template-columns: 1fr; }
+    .industry-grid { grid-template-columns: repeat(2, 1fr); }
+    .ref-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .why-visual { display: none; }
+    .blog-grid { grid-template-columns: 1fr; }
+    .career-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .trust-bar { padding: 24px 20px; }
+    .form-row { grid-template-columns: 1fr; }
+    .cta-strip { padding: 56px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgOTAiPgogIDxjaXJjbGUgY3g9IjM4IiBjeT0iMjgiIHI9IjIyIiBmaWxsPSIjRjVBNjIzIi8+CiAgPGNpcmNsZSBjeD0iNjYiIGN5PSIyMiIgcj0iMjYiIGZpbGw9IiM5QjJBQTAiLz4KICA8cmVjdCB4PSI1NCIgeT0iMTEiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyMiIgcng9IjQiIGZpbGw9IndoaXRlIi8+CiAgPHJlY3QgeD0iNTkiIHk9IjE3IiB3aWR0aD0iMTQiIGhlaWdodD0iMTAiIHJ4PSIyIiBmaWxsPSIjOUIyQUEwIi8+CiAgPHRleHQgeD0iNSIgeT0iNzUiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjayIgZm9udC1zaXplPSIzMiIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iIzAwQTNBMyI+SGV5PC90ZXh0PgogIDx0ZXh0IHg9IjgxIiB5PSI3NSIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrIiBmb250LXNpemU9IjMyIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjRjVBNjIzIj5jb250YWN0PC90ZXh0PgogIDx0ZXh0IHg9IjgxIiB5PSI4OCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrIiBmb250LXNpemU9IjI0IiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjOUIyQUEwIj5oZXJvZXM8L3RleHQ+Cjwvc3ZnPg==" alt="Hey Contact Heroes Logo" onerror="this.style.display='none';this.parentNode.innerHTML='<span style=\'font-family:Syne,sans-serif;font-weight:800;font-size:20px\'><span style=\'color:#00A3A3\'>Hey</span> <span style=\'color:#F5A623\'>contact</span><br><span style=\'color:#9B2AA0\'>heroes</span></span>'">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#leistungen">Leistungen</a></li>
+      <li><a href="#branchen">Branchenlösungen</a></li>
+      <li><a href="#ueber-uns">Über uns</a></li>
+      <li><a href="#warum-hch">Warum HCH</a></li>
+      <li><a href="#referenzen">Referenzen</a></li>
+      <li><a href="#karriere">Karriere</a></li>
+      <li><a href="#technologie">Technologie & KI</a></li>
+      <li><a href="#insights">Insights</a></li>
+      <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#leistungen" onclick="toggleMenu()">Leistungen</a>
+  <a href="#branchen" onclick="toggleMenu()">Branchenlösungen</a>
+  <a href="#ueber-uns" onclick="toggleMenu()">Über uns</a>
+  <a href="#warum-hch" onclick="toggleMenu()">Warum HCH</a>
+  <a href="#referenzen" onclick="toggleMenu()">Referenzen</a>
+  <a href="#karriere" onclick="toggleMenu()">Karriere</a>
+  <a href="#technologie" onclick="toggleMenu()">Technologie & KI</a>
+  <a href="#insights" onclick="toggleMenu()">Insights</a>
+  <a href="#kontakt" onclick="toggleMenu()">Kontakt aufnehmen →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge fade-up fade-up-d1">Call Center Hamburg · 100% Remote</div>
+      <h1 class="fade-up fade-up-d2">
+        Ihr <span class="accent-teal">Customer Service</span><br>
+        auf dem nächsten<br>
+        <span class="accent-orange">Level</span>
+      </h1>
+      <p class="hero-sub fade-up fade-up-d3">
+        Hey Contact Heroes verbindet erstklassigen Kundenservice mit modernster KI-Technologie — remote, skalierbar und messbar für B2B-Unternehmen in ganz Europa.
+      </p>
+      <div class="hero-actions fade-up fade-up-d4">
+        <a href="#kontakt" class="btn-primary">
+          Jetzt kostenlos beraten lassen
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#leistungen" class="btn-secondary">Leistungen entdecken</a>
+      </div>
+      <div class="hero-stats fade-up fade-up-d4">
+        <div class="hero-stat">
+          <span class="hero-stat-num">98%</span>
+          <span class="hero-stat-label">Kundenzufriedenheit</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">150+</span>
+          <span class="hero-stat-label">Agenten remote</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">24/7</span>
+          <span class="hero-stat-label">Erreichbarkeit</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-live-badge"><span class="online-dot"></span>Live-Dashboard</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.4);font-weight:600;margin-bottom:6px;letter-spacing:0.04em;text-transform:uppercase">Aktive Gespräche</div>
+            <div style="font-family:Syne,sans-serif;font-size:32px;font-weight:800;color:#00A3A3">47</div>
+          </div>
+          <div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.4);font-weight:600;margin-bottom:6px;letter-spacing:0.04em;text-transform:uppercase">Ø Wartezeit</div>
+            <div style="font-family:Syne,sans-serif;font-size:32px;font-weight:800;color:#22D45B">8s</div>
+          </div>
+        </div>
+        <div style="height:4px;background:rgba(255,255,255,0.06);border-radius:2px;margin-top:20px;overflow:hidden">
+          <div style="height:4px;width:78%;background:linear-gradient(90deg,#00A3A3,#22D45B);border-radius:2px"></div>
+        </div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:8px">78% Kapazität · Inbound Hotline</div>
+      </div>
+      <div class="hero-card-row">
+        <div class="hero-card">
+          <div class="hero-card-icon" style="background:rgba(0,163,163,0.2)">📞</div>
+          <div class="hero-card-title">Inbound</div>
+          <div class="hero-card-text">Professionelle Anrufannahme & Erstlösung</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-icon" style="background:rgba(245,166,35,0.2)">🤖</div>
+          <div class="hero-card-title">KI & Automation</div>
+          <div class="hero-card-text">Bots, Workflows & intelligente Analyse</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+          <div style="width:36px;height:36px;border-radius:50%;background:rgba(245,166,35,0.25);display:flex;align-items:center;justify-content:center;font-size:16px">⭐</div>
+          <div>
+            <div style="font-size:14px;font-weight:600;color:white">Maria K., Head of CX bei TechCorp</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.4)">vor 2 Tagen</div>
+          </div>
+        </div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.6);font-style:italic;line-height:1.65">"Seit dem Start mit HCH ist unsere CSAT um 23 Punkte gestiegen. Absolute Empfehlung!"</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <span class="trust-label">Vertrauen von</span>
+    <div class="trust-logos">
+      <span class="trust-logo-item">TechCorp GmbH</span>
+      <span class="trust-logo-item">EnergieWelt AG</span>
+      <span class="trust-logo-item">ShopNow Europe</span>
+      <span class="trust-logo-item">Telko Direkt</span>
+      <span class="trust-logo-item">HealthFirst</span>
+      <span class="trust-logo-item">FinanzPlus</span>
+    </div>
+  </div>
+</div>
+
+<!-- LEISTUNGEN -->
+<section id="leistungen">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Leistungen</div>
+      <h2 class="section-title">Alles, was Ihr Kundenservice<br>braucht — aus einer Hand</h2>
+      <p class="section-sub">Von der ersten Kontaktaufnahme bis zur langfristigen Kundenbindung bieten wir maßgeschneiderte Contact Center Lösungen.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon teal">📞</div>
+        <h3>Inbound Customer Service</h3>
+        <p>Professionelle Anrufannahme, Erstlösung und Eskalationsmanagement – rund um die Uhr, mehrsprachig und DSGVO-konform.</p>
+        <div class="service-tags">
+          <span class="tag teal">Telefonservice</span>
+          <span class="tag teal">E-Mail Support</span>
+          <span class="tag teal">Live-Chat</span>
+          <span class="tag teal">Mehrsprachig</span>
+        </div>
+      </div>
+      <div class="service-card orange">
+        <div class="service-icon orange">📣</div>
+        <h3>Outbound Sales & Retention</h3>
+        <p>Aktiver Vertrieb, Terminvereinbarung, Kundenrückgewinnung und Up-/Cross-Selling durch erfahrene Sales-Agenten.</p>
+        <div class="service-tags">
+          <span class="tag orange">Telemarketing</span>
+          <span class="tag orange">Lead-Qualifizierung</span>
+          <span class="tag orange">Retention</span>
+        </div>
+      </div>
+      <div class="service-card purple">
+        <div class="service-icon purple">🗂️</div>
+        <h3>Back Office Processing</h3>
+        <p>Datenpflege, Dokumentenverarbeitung, Ticket-Management und administrative Prozesse — schnell, genau, skalierbar.</p>
+        <div class="service-tags">
+          <span class="tag purple">Dateneingabe</span>
+          <span class="tag purple">Dokumenten-Mgmt</span>
+          <span class="tag purple">Qualitätssicherung</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon teal">🤖</div>
+        <h3>KI & Automation</h3>
+        <p>Chatbots, Voicebots und intelligente Workflow-Automatisierung für schnellere Antwortzeiten und niedrigere Kosten.</p>
+        <div class="service-tags">
+          <span class="tag teal">Chatbot</span>
+          <span class="tag teal">Voicebot</span>
+          <span class="tag teal">NLP/KI</span>
+          <span class="tag teal">Automation</span>
+        </div>
+      </div>
+      <div class="service-card orange">
+        <div class="service-icon orange">📊</div>
+        <h3>Quality Management</h3>
+        <p>Systematisches Qualitätsmonitoring, Coaching, Reporting und KPI-Tracking für kontinuierliche Verbesserung.</p>
+        <div class="service-tags">
+          <span class="tag orange">Monitoring</span>
+          <span class="tag orange">Coaching</span>
+          <span class="tag orange">Reporting</span>
+        </div>
+      </div>
+      <div class="service-card purple">
+        <div class="service-icon purple">🌍</div>
+        <h3>Multilingual Support</h3>
+        <p>Kundenservice auf Deutsch, Englisch, Türkisch, Arabisch und weiteren Sprachen — für internationale Märkte.</p>
+        <div class="service-tags">
+          <span class="tag purple">DE / EN</span>
+          <span class="tag purple">TR / AR</span>
+          <span class="tag purple">+weitere</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WARUM HCH -->
+<section class="why-section" id="warum-hch">
+  <div class="section-inner">
+    <div class="why-grid">
+      <div>
+        <div class="section-header">
+          <div class="section-label">Warum HCH</div>
+          <h2 class="section-title">Warum führende Unternehmen auf uns setzen</h2>
+          <p class="section-sub">Wir sind kein klassisches Call Center — wir sind Ihr strategischer Customer Service Partner.</p>
+        </div>
+        <div class="why-items">
+          <div class="why-item">
+            <div class="why-num">01</div>
+            <div class="why-content">
+              <h4>100% Remote-Aufstellung</h4>
+              <p>Unser gesamtes Team arbeitet remote — keine Bürokosten, maximale Flexibilität und schnelle Skalierbarkeit ohne Investitionsrisiko für Sie.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-num">02</div>
+            <div class="why-content">
+              <h4>KI-gestützte Effizienz</h4>
+              <p>Wir integrieren KI-Tools und Automatisierung in jeden Prozess — für bis zu 40% schnellere Bearbeitungszeiten und messbar höhere CSAT-Scores.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-num">03</div>
+            <div class="why-content">
+              <h4>Transparentes Reporting</h4>
+              <p>Live-Dashboards, wöchentliche Reports und monatliche Business Reviews — Sie sehen jederzeit genau, was Ihr Geld bringt.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-num">04</div>
+            <div class="why-content">
+              <h4>DSGVO & ISO-konform</h4>
+              <p>Datenschutz ist für uns keine Option, sondern Standard. Alle Prozesse sind DSGVO-konform und nach branchenspezifischen Anforderungen zertifiziert.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why-visual">
+        <div class="why-kpi">
+          <span class="why-kpi-val kpi-teal">98%</span>
+          <div class="why-kpi-label">Kundenzufriedenheit (CSAT)</div>
+        </div>
+        <div class="why-kpi">
+          <span class="why-kpi-val kpi-orange">↓40%</span>
+          <div class="why-kpi-label">Reduktion Handling Time</div>
+        </div>
+        <div class="why-kpi">
+          <span class="why-kpi-val kpi-purple">150+</span>
+          <div class="why-kpi-label">Remote-Agenten</div>
+        </div>
+        <div class="why-kpi">
+          <span class="why-kpi-val kpi-green">24/7</span>
+          <div class="why-kpi-label">Erreichbarkeit</div>
+        </div>
+        <div class="why-kpi span2">
+          <span class="why-kpi-val" style="color:var(--orange);font-size:30px">5 Sprachen</span>
+          <div class="why-kpi-label">DE · EN · TR · AR · FR</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANCHEN -->
+<section id="branchen">
+  <div class="section-inner">
+    <div class="section-header centered">
+      <div class="section-label">Branchenlösungen</div>
+      <h2 class="section-title">Maßgeschneidert für Ihre Branche</h2>
+      <p class="section-sub">Kein Einheitskonzept — wir kennen die Besonderheiten Ihrer Branche und richten unsere Prozesse danach aus.</p>
+    </div>
+    <div class="industry-grid">
+      <div class="industry-card">
+        <div class="industry-thumb" style="background:#E0F7F7">🛒</div>
+        <div class="industry-body">
+          <h4>E-Commerce & Retail</h4>
+          <p>Bestellstatus, Retouren, Beschwerdemanagement und Kundenbindung für Online-Händler jeder Größe.</p>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-thumb" style="background:#FEF3DC">📡</div>
+        <div class="industry-body">
+          <h4>Telekommunikation</h4>
+          <p>Vertragsverwaltung, technischer Support und Churn-Prävention für Telekommunikationsanbieter.</p>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-thumb" style="background:#F5E6F6">⚡</div>
+        <div class="industry-body">
+          <h4>Energie & Utilities</h4>
+          <p>Zählerstandsmeldungen, Vertragsservice und Störungsmanagement für Energieversorger.</p>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-thumb" style="background:#E0F7F7">🏥</div>
+        <div class="industry-body">
+          <h4>Healthcare & Pharma</h4>
+          <p>Patientenservice, Terminverwaltung und regulatorisch-konforme Kommunikation im Gesundheitswesen.</p>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-thumb" style="background:#FEF3DC">💰</div>
+        <div class="industry-body">
+          <h4>Financial Services</h4>
+          <p>Kundenberatung, Onboarding und Beschwerdemanagement für Banken, Versicherungen und Fintech.</p>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-thumb" style="background:#F5E6F6">🚚</div>
+        <div class="industry-body">
+          <h4>Logistik & Transport</h4>
+          <p>Sendungsverfolgung, Schadensmeldungen und B2B-Kundenservice für Logistikunternehmen.</p>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-thumb" style="background:#E0F7F7">💻</div>
+        <div class="industry-body">
+          <h4>Software & SaaS</h4>
+          <p>Technical Support Level 1/2, Onboarding und Retention-Programme für Software-Unternehmen.</p>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-thumb" style="background:#FEF3DC">🏢</div>
+        <div class="industry-body">
+          <h4>Weitere Branchen</h4>
+          <p>Immobilien, Bildung, Tourismus und mehr — sprechen Sie uns auf Ihre spezifische Branche an.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ÜBER UNS -->
+<section id="ueber-uns" style="background:var(--light)">
+  <div class="section-inner">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
+      <div>
+        <div class="section-label">Über uns</div>
+        <h2 class="section-title">Remote-first. Mensch-first. Ergebnis-first.</h2>
+        <p style="font-size:17px;color:var(--muted);line-height:1.8;margin-bottom:28px">
+          Hey Contact Heroes wurde mit einer klaren Vision gegründet: erstklassigen Kundenservice ohne die Kompromisse traditioneller Call Center anzubieten. Kein Großraumbüro, kein starres 9-to-5-Modell.
+        </p>
+        <p style="font-size:17px;color:var(--muted);line-height:1.8;margin-bottom:36px">
+          Unser Team aus erfahrenen Customer Service Profis arbeitet vollständig remote — verbunden durch Technologie, vereint durch Leidenschaft für außergewöhnlichen Kundenservice.
+        </p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+          <div style="background:white;border:1px solid var(--border);border-radius:var(--radius);padding:24px">
+            <div style="font-family:Syne,sans-serif;font-size:32px;font-weight:800;color:var(--teal);margin-bottom:4px">2019</div>
+            <div style="font-size:14px;color:var(--muted)">Gegründet in Hamburg</div>
+          </div>
+          <div style="background:white;border:1px solid var(--border);border-radius:var(--radius);padding:24px">
+            <div style="font-family:Syne,sans-serif;font-size:32px;font-weight:800;color:var(--orange);margin-bottom:4px">150+</div>
+            <div style="font-size:14px;color:var(--muted)">Spezialisierte Experten</div>
+          </div>
+          <div style="background:white;border:1px solid var(--border);border-radius:var(--radius);padding:24px">
+            <div style="font-family:Syne,sans-serif;font-size:32px;font-weight:800;color:var(--purple);margin-bottom:4px">50+</div>
+            <div style="font-size:14px;color:var(--muted)">Aktive Kunden</div>
+          </div>
+          <div style="background:white;border:1px solid var(--border);border-radius:var(--radius);padding:24px">
+            <div style="font-family:Syne,sans-serif;font-size:32px;font-weight:800;color:var(--teal);margin-bottom:4px">5+</div>
+            <div style="font-size:14px;color:var(--muted)">Unterstützte Sprachen</div>
+          </div>
+        </div>
+      </div>
+      <div style="background:white;border:1px solid var(--border);border-radius:var(--radius-lg);padding:40px">
+        <h3 style="font-family:Syne,sans-serif;font-size:22px;font-weight:800;color:var(--dark);margin-bottom:28px">Unsere Werte</h3>
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <div style="display:flex;gap:16px;align-items:flex-start">
+            <div style="width:40px;height:40px;border-radius:10px;background:var(--teal-light);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">🤝</div>
+            <div>
+              <div style="font-family:Syne,sans-serif;font-size:16px;font-weight:700;color:var(--dark);margin-bottom:4px">Partnerschaft auf Augenhöhe</div>
+              <div style="font-size:14px;color:var(--muted)">Wir denken mit, handeln unternehmerisch und kommunizieren offen — immer.</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start">
+            <div style="width:40px;height:40px;border-radius:10px;background:var(--orange-light);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">🎯</div>
+            <div>
+              <div style="font-family:Syne,sans-serif;font-size:16px;font-weight:700;color:var(--dark);margin-bottom:4px">Ergebnisorientierung</div>
+              <div style="font-size:14px;color:var(--muted)">KPIs sind keine Zahlen für uns — sie sind Versprechen, die wir einhalten.</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start">
+            <div style="width:40px;height:40px;border-radius:10px;background:var(--purple-light);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">🚀</div>
+            <div>
+              <div style="font-family:Syne,sans-serif;font-size:16px;font-weight:700;color:var(--dark);margin-bottom:4px">Kontinuierliche Innovation</div>
+              <div style="font-size:14px;color:var(--muted)">Wir testen, lernen und verbessern — jeden Tag ein bisschen besser als gestern.</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start">
+            <div style="width:40px;height:40px;border-radius:10px;background:var(--teal-light);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">❤️</div>
+            <div>
+              <div style="font-family:Syne,sans-serif;font-size:16px;font-weight:700;color:var(--dark);margin-bottom:4px">Menschlichkeit im Service</div>
+              <div style="font-size:14px;color:var(--muted)">Technologie unterstützt — echte Menschen begeistern Ihre Kunden.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENZEN -->
+<section class="ref-section" id="referenzen">
+  <div class="section-inner">
+    <div class="section-header centered">
+      <div class="section-label">Referenzen</div>
+      <h2 class="section-title">Was unsere Kunden sagen</h2>
+      <p class="section-sub">Echte Ergebnisse, echte Menschen — Erfolgsgeschichten aus der Praxis.</p>
+    </div>
+    <div class="ref-grid">
+      <div class="ref-card">
+        <div class="ref-quote">"</div>
+        <p class="ref-text">Hey Contact Heroes hat unseren Kundenservice komplett transformiert. Die CSAT ist um 23 Punkte gestiegen und die Bearbeitungszeit hat sich fast halbiert. Wir würden jederzeit wieder mit HCH arbeiten.</p>
+        <div class="ref-author">
+          <div class="ref-avatar" style="background:var(--teal)">MK</div>
+          <div>
+            <div class="ref-name">Maria Klinger</div>
+            <div class="ref-role">Head of Customer Experience · E-Commerce GmbH</div>
+            <div class="ref-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="ref-card">
+        <div class="ref-quote">"</div>
+        <p class="ref-text">Als Telekommunikationsanbieter haben wir besonders hohe Anforderungen an Compliance und Datenqualität. HCH hat das von Tag eins an verstanden und hervorragend umgesetzt.</p>
+        <div class="ref-author">
+          <div class="ref-avatar" style="background:var(--orange)">TM</div>
+          <div>
+            <div class="ref-name">Thomas Müller</div>
+            <div class="ref-role">COO · Telko Direkt AG</div>
+            <div class="ref-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="ref-card">
+        <div class="ref-quote">"</div>
+        <p class="ref-text">Die Kombination aus menschlicher Expertise und KI-Tools ist einzigartig. Unser First-Contact-Resolution-Rate ist von 64% auf 89% gestiegen — das spricht für sich.</p>
+        <div class="ref-author">
+          <div class="ref-avatar" style="background:var(--purple)">SB</div>
+          <div>
+            <div class="ref-name">Sandra Becker</div>
+            <div class="ref-role">VP Operations · HealthFirst GmbH</div>
+            <div class="ref-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:48px;background:white;border:1px solid var(--border);border-radius:var(--radius-lg);padding:40px 48px;display:grid;grid-template-columns:repeat(4,1fr);gap:40px;text-align:center">
+      <div>
+        <div style="font-family:Syne,sans-serif;font-size:40px;font-weight:800;color:var(--teal);margin-bottom:8px">+89%</div>
+        <div style="font-size:14px;color:var(--muted)">First Contact Resolution</div>
+      </div>
+      <div>
+        <div style="font-family:Syne,sans-serif;font-size:40px;font-weight:800;color:var(--orange);margin-bottom:8px">-37%</div>
+        <div style="font-size:14px;color:var(--muted)">Average Handle Time</div>
+      </div>
+      <div>
+        <div style="font-family:Syne,sans-serif;font-size:40px;font-weight:800;color:var(--purple);margin-bottom:8px">4.9/5</div>
+        <div style="font-size:14px;color:var(--muted)">Durchschnittliche Bewertung</div>
+      </div>
+      <div>
+        <div style="font-family:Syne,sans-serif;font-size:40px;font-weight:800;color:var(--teal);margin-bottom:8px">50+</div>
+        <div style="font-size:14px;color:var(--muted)">Zufriedene Kunden</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNOLOGIE & KI -->
+<section class="tech-section" id="technologie">
+  <div class="section-inner">
+    <div class="section-header centered">
+      <div class="section-label">Technologie & KI</div>
+      <h2 class="section-title">Modernste Technologie.<br>Messbare Ergebnisse.</h2>
+      <p class="section-sub" style="margin:0 auto">KI ist keine Zukunftsmusik — bei uns ist sie bereits heute der Standard. Wir verbinden das Beste aus Mensch und Maschine.</p>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-features">
+        <div class="tech-feature active">
+          <div class="tech-feature-icon teal">🤖</div>
+          <div>
+            <h5>Conversational AI & Chatbots</h5>
+            <p>Intelligente Bots, die Routineanfragen autonom lösen und nahtlos an menschliche Agenten übergeben — 24/7, ohne Wartezeit.</p>
+          </div>
+        </div>
+        <div class="tech-feature">
+          <div class="tech-feature-icon orange">🎙️</div>
+          <div>
+            <h5>Voicebot & Speech Analytics</h5>
+            <p>Natürliche Sprachverarbeitung für Anrufe: automatische Transkription, Sentiment-Analyse und Qualitätssicherung in Echtzeit.</p>
+          </div>
+        </div>
+        <div class="tech-feature">
+          <div class="tech-feature-icon purple">⚡</div>
+          <div>
+            <h5>Workflow Automation (RPA)</h5>
+            <p>Repetitive Back-Office-Prozesse werden automatisiert — Fehlerquote gegen null, Geschwindigkeit maximiert.</p>
+          </div>
+        </div>
+        <div class="tech-feature">
+          <div class="tech-feature-icon teal">📊</div>
+          <div>
+            <h5>Analytics & Reporting</h5>
+            <p>Echtzeit-Dashboards, prädiktive Analysen und KI-gestützte Handlungsempfehlungen für datengetriebene Entscheidungen.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="tech-visual-card">
+          <div class="tech-platform-title">Unterstützte Plattformen & Tools</div>
+          <div class="tech-platforms">
+            <div class="tech-platform-item"><span>💬</span>Zendesk</div>
+            <div class="tech-platform-item"><span>🔧</span>Salesforce</div>
+            <div class="tech-platform-item"><span>📞</span>Genesys</div>
+            <div class="tech-platform-item"><span>🤖</span>Dialogflow</div>
+            <div class="tech-platform-item"><span>📱</span>Twilio</div>
+            <div class="tech-platform-item"><span>📊</span>Tableau</div>
+            <div class="tech-platform-item"><span>⚡</span>Zapier</div>
+            <div class="tech-platform-item"><span>🔗</span>HubSpot</div>
+            <div class="tech-platform-item"><span>🧠</span>OpenAI</div>
+          </div>
+          <div class="tech-metric-row">
+            <div class="tech-metric">
+              <span class="tech-metric-val">40%</span>
+              <span class="tech-metric-lbl">Effizienz-Gewinn</span>
+            </div>
+            <div class="tech-metric">
+              <span class="tech-metric-val">&lt;8s</span>
+              <span class="tech-metric-lbl">Bot-Antwortzeit</span>
+            </div>
+            <div class="tech-metric">
+              <span class="tech-metric-val">92%</span>
+              <span class="tech-metric-lbl">Bot-Lösungsrate</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KARRIERE -->
+<section class="career-section" id="karriere">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Karriere</div>
+      <h2 class="section-title">Werde ein Hero.<br>Work from anywhere.</h2>
+      <p class="section-sub">Wir suchen leidenschaftliche Menschen, die Kundenservice lieben und remote arbeiten möchten — egal von wo auf der Welt.</p>
+    </div>
+    <div class="career-grid">
+      <div>
+        <div class="job-list">
+          <a href="#kontakt" class="job-card">
+            <div class="job-icon">📞</div>
+            <div class="job-info">
+              <h5>Customer Service Agent (m/w/d)</h5>
+              <p>Inbound · Deutsch / Englisch</p>
+              <div class="job-badges">
+                <span class="job-badge badge-remote">Remote</span>
+                <span class="job-badge badge-full">Vollzeit</span>
+              </div>
+            </div>
+          </a>
+          <a href="#kontakt" class="job-card">
+            <div class="job-icon">📊</div>
+            <div class="job-info">
+              <h5>Quality Manager CX (m/w/d)</h5>
+              <p>Qualitätssicherung · Reporting</p>
+              <div class="job-badges">
+                <span class="job-badge badge-remote">Remote</span>
+                <span class="job-badge badge-full">Vollzeit</span>
+              </div>
+            </div>
+          </a>
+          <a href="#kontakt" class="job-card">
+            <div class="job-icon">🤖</div>
+            <div class="job-info">
+              <h5>KI & Automation Specialist (m/w/d)</h5>
+              <p>Chatbot-Entwicklung · NLP</p>
+              <div class="job-badges">
+                <span class="job-badge badge-remote">Remote</span>
+                <span class="job-badge badge-full">Vollzeit</span>
+              </div>
+            </div>
+          </a>
+          <a href="#kontakt" class="job-card">
+            <div class="job-icon">🌍</div>
+            <div class="job-info">
+              <h5>Multilingual Agent (m/w/d)</h5>
+              <p>TR / AR / FR · Inbound & Outbound</p>
+              <div class="job-badges">
+                <span class="job-badge badge-remote">Remote</span>
+                <span class="job-badge badge-part">Teilzeit möglich</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="career-perks">
+        <div class="perk-card">
+          <div class="perk-icon">🏠</div>
+          <h6>100% Remote</h6>
+          <p>Arbeite von wo du möchtest — Home Office, Café oder Strand.</p>
+        </div>
+        <div class="perk-card">
+          <div class="perk-icon">📈</div>
+          <h6>Karriere & Wachstum</h6>
+          <p>Klare Entwicklungspfade und regelmäßige Weiterbildungen.</p>
+        </div>
+        <div class="perk-card">
+          <div class="perk-icon">⏰</div>
+          <h6>Flexible Zeiten</h6>
+          <p>Verschiedene Schichtmodelle für maximale Work-Life-Balance.</p>
+        </div>
+        <div class="perk-card">
+          <div class="perk-icon">🤝</div>
+          <h6>Team & Community</h6>
+          <p>Starkes Remote-Team mit digitalen Events und Team-Meetings.</p>
+        </div>
+        <div class="perk-card">
+          <div class="perk-icon">💻</div>
+          <h6>Tech-Ausstattung</h6>
+          <p>Alles was du brauchst — wir stellen die Software bereit.</p>
+        </div>
+        <div class="perk-card">
+          <div class="perk-icon">🌟</div>
+          <h6>Faire Vergütung</h6>
+          <p>Wettbewerbsfähige Gehälter, Boni und transparente Konditionen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIGHTS / BLOG -->
+<section id="insights">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Insights</div>
+      <h2 class="section-title">Wissen, das Ihren<br>Service voranbringt</h2>
+      <p class="section-sub">Aktuelle Trends, Best Practices und Expertenwissen aus der Welt des Customer Service.</p>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="blog-thumb" style="background:var(--teal-light)">🤖</div>
+        <div class="blog-body">
+          <div class="blog-cat">KI & Automation</div>
+          <h4>Wie KI-Chatbots 2025 den First-Contact-Resolution-Rate um bis zu 40% steigern</h4>
+          <p>Erfahren Sie, welche KI-Technologien den größten Einfluss auf Ihre CX-Kennzahlen haben und wie Sie sie effektiv einsetzen.</p>
+          <div class="blog-meta">
+            <span class="blog-date">15. März 2025</span>
+            <span class="blog-dot">·</span>
+            <span>5 Min. Lesezeit</span>
+          </div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-thumb" style="background:var(--orange-light)">📊</div>
+        <div class="blog-body">
+          <div class="blog-cat" style="color:var(--orange)">Customer Experience</div>
+          <h4>CSAT vs. NPS vs. CES: Welche Kennzahl ist für Ihr Unternehmen die richtige?</h4>
+          <p>Ein praxisnaher Vergleich der wichtigsten CX-Metriken — und wann Sie welche einsetzen sollten.</p>
+          <div class="blog-meta">
+            <span class="blog-date">2. April 2025</span>
+            <span class="blog-dot">·</span>
+            <span>7 Min. Lesezeit</span>
+          </div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-thumb" style="background:var(--purple-light)">🌍</div>
+        <div class="blog-body">
+          <div class="blog-cat" style="color:var(--purple)">Remote Work</div>
+          <h4>Remote Call Center: 7 Erfolgsfaktoren für ein leistungsstarkes verteiltes Team</h4>
+          <p>Was macht Remote-Teams im Customer Service wirklich erfolgreich? Unsere Erfahrungen aus 5 Jahren 100% Remote-Betrieb.</p>
+          <div class="blog-meta">
+            <span class="blog-date">18. April 2025</span>
+            <span class="blog-dot">·</span>
+            <span>9 Min. Lesezeit</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px">
+      <a href="#kontakt" class="btn-primary" style="display:inline-flex">Alle Artikel ansehen →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <h2>Bereit, Ihren Kundenservice<br>auf das nächste Level zu heben?</h2>
+  <p>Kostenlose Erstberatung · Individuelles Angebot · Keine versteckten Kosten</p>
+  <div class="cta-strip-actions">
+    <a href="#kontakt" class="btn-white">Jetzt Beratungsgespräch buchen</a>
+    <a href="tel:+4940000000" class="btn-outline-white">📞 +49 40 000 000</a>
+  </div>
+</div>
+
+<!-- KONTAKT -->
+<section class="contact-section" id="kontakt">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="section-label">Kontakt</div>
+        <h2 class="section-title">Lassen Sie uns sprechen.</h2>
+        <p style="font-size:16px;color:rgba(255,255,255,0.6);line-height:1.75;margin-bottom:8px">
+          Füllen Sie das Formular aus und wir melden uns innerhalb von 24 Stunden bei Ihnen — garantiert.
+        </p>
+        <div class="contact-info-items">
+          <div class="contact-info-item">
+            <div class="contact-info-icon teal">📧</div>
+            <div>
+              <div class="contact-info-label">E-Mail</div>
+              <div class="contact-info-val">hello@hey-contact-heroes.de</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon orange">📞</div>
+            <div>
+              <div class="contact-info-label">Telefon</div>
+              <div class="contact-info-val">+49 40 000 000</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon purple">📍</div>
+            <div>
+              <div class="contact-info-label">Standort</div>
+              <div class="contact-info-val">Hamburg, Deutschland · 100% Remote</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon teal">🕐</div>
+            <div>
+              <div class="contact-info-label">Erreichbarkeit</div>
+              <div class="contact-info-val">Mo–Fr 8:00–18:00 Uhr · Service 24/7</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrap" id="form-container">
+        <form id="contact-form" onsubmit="submitForm(event)">
+          <h3 style="font-family:Syne,sans-serif;font-size:22px;font-weight:800;color:white;margin-bottom:28px">Jetzt Beratungsgespräch anfragen</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Vorname *</label>
+              <input type="text" class="form-input" placeholder="Max" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Nachname *</label>
+              <input type="text" class="form-input" placeholder="Mustermann" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">E-Mail *</label>
+              <input type="email" class="form-input" placeholder="max@unternehmen.de" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Telefon</label>
+              <input type="tel" class="form-input" placeholder="+49 40 ...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Unternehmen *</label>
+            <input type="text" class="form-input" placeholder="Muster GmbH" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Leistung, die Sie interessiert</label>
+            <select class="form-select">
+              <option value="">Bitte auswählen...</option>
+              <option>Inbound Customer Service</option>
+              <option>Outbound Sales & Retention</option>
+              <option>Back Office Processing</option>
+              <option>KI & Automation</option>
+              <option>Multilingual Support</option>
+              <option>Mehrere Leistungen / Nicht sicher</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Ihre Nachricht</label>
+            <textarea class="form-input" placeholder="Schildern Sie uns kurz Ihre Situation und Anforderungen..."></textarea>
+          </div>
+          <div class="form-consent">
+            <input type="checkbox" id="consent" required>
+            <label for="consent">Ich stimme der Verarbeitung meiner Daten gemäß der <a href="#">Datenschutzerklärung</a> zu. Diese Einwilligung kann ich jederzeit widerrufen.</label>
+          </div>
+          <button type="submit" class="btn-form">
+            Anfrage absenden
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+          </button>
+        </form>
+        <div class="form-success" id="form-success">
+          <div class="success-icon">✅</div>
+          <h3>Vielen Dank!</h3>
+          <p>Ihre Anfrage ist bei uns eingegangen.<br>Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">
+          <span style="font-family:Syne,sans-serif;font-size:22px;font-weight:800"><span style="color:#00A3A3">Hey</span> <span style="color:#F5A623">contact</span> <span style="color:#9B2AA0">heroes</span></span>
+        </div>
+        <p class="footer-brand-text">Erstklassiger Customer Service für B2B-Unternehmen — remote, skalierbar und KI-gestützt. Ihr strategischer Partner für außergewöhnliche Kundenerlebnisse.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn" title="LinkedIn">in</a>
+          <a href="#" class="social-btn" title="Xing">X</a>
+          <a href="#" class="social-btn" title="Instagram">📷</a>
+          <a href="#" class="social-btn" title="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h6>Leistungen</h6>
+        <ul>
+          <li><a href="#leistungen">Inbound Service</a></li>
+          <li><a href="#leistungen">Outbound Sales</a></li>
+          <li><a href="#leistungen">Back Office</a></li>
+          <li><a href="#technologie">KI & Automation</a></li>
+          <li><a href="#leistungen">Multilingual Support</a></li>
+          <li><a href="#leistungen">Quality Management</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h6>Unternehmen</h6>
+        <ul>
+          <li><a href="#ueber-uns">Über uns</a></li>
+          <li><a href="#warum-hch">Warum HCH</a></li>
+          <li><a href="#referenzen">Referenzen</a></li>
+          <li><a href="#karriere">Karriere</a></li>
+          <li><a href="#insights">Insights / Blog</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h6>Kontakt</h6>
+        <ul>
+          <li><a href="mailto:hello@hey-contact-heroes.de">hello@hey-contact-heroes.de</a></li>
+          <li><a href="tel:+4940000000">+49 40 000 000</a></li>
+          <li><a href="#">Hamburg, Deutschland</a></li>
+          <li><a href="#">Mo–Fr 8:00–18:00</a></li>
+        </ul>
+        <div style="margin-top:20px">
+          <a href="#kontakt" class="btn-primary" style="font-size:13px;padding:10px 18px">Jetzt anfragen →</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Hey Contact Heroes GmbH · Call Center Hamburg · Alle Rechte vorbehalten. Developed by Al Mahmud</div>
+      <div class="footer-legal">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">AGB</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('open');
+  }
+
+  function submitForm(e) {
+    e.preventDefault();
+    document.getElementById('contact-form').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  }
+
+  // Smooth scroll for all anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('main-nav');
+    if (window.scrollY > 60) {
+      nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+    } else {
+      nav.style.boxShadow = 'none';
+    }
+  });
+
+  // Scroll reveal animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.style.opacity = '1';
+        el.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.service-card, .industry-card, .ref-card, .blog-card, .job-card, .why-item, .tech-feature, .perk-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+
+  // Tech feature interactivity
+  document.querySelectorAll('.tech-feature').forEach(f => {
+    f.addEventListener('click', () => {
+      document.querySelectorAll('.tech-feature').forEach(x => x.classList.remove('active'));
+      f.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
